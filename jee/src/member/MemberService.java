@@ -10,12 +10,19 @@ package member;
  * @story :
  */
 public interface MemberService {
-	public void registstudent(String id, String pw, String name, String ssn);
+	public String regist(MemberBean bean);
 
-	public String showStudent();
+	public String show();
 
-	public void updateStudent(String pw);
+	public void update(String pw);
 
-	public void deleteStudent();
+	public void delete();
 
 }
+// String sqlCreate = "create table member("
+// + "id varchar2(20) primary key,"
+// + "name varchar2(20),"
+// + "ssn varchar2(20),"
+// + "pw varchar2(20),"
+// + "reg_date varchar2(20)"
+// + "),";

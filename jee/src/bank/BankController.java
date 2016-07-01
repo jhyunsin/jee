@@ -21,6 +21,7 @@ public class BankController {
 		int ok = 0;
 		String spec = "";
 		String[] specArr = new String[3];
+	
 		while (true) {
 
 			switch (JOptionPane.showInputDialog("" + "=========개인인터넷뱅킹=======" + "1개설" + "2입금," + "3조회," + "4출금,"

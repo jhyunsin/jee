@@ -13,6 +13,11 @@ import java.util.List;
  * @author : 신재현
  * @file : JDBCTest.java
  * @story :
+ * null와 new의 차이
+ * new는 건물을 짓는것이고 null은 땅만 골라 놓는것
+ * 필요한 값만 불러올때는 땅만 골라놓는 것이 낭비가 없다
+ * 어떻게 하면 빠르게 할까에 대한 고민이 필요하당!!
+ * 
  */
 
 public class JDBCTest { //연결을 확인하는 작업
@@ -24,17 +29,17 @@ public class JDBCTest { //연결을 확인하는 작업
 		List<String> list = new ArrayList<String>();
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
-			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.ORACLE_ID, Constants.ORACLE_PW);
+			con = DriverManager.getConnection(
+					Constants.ORACLE_URL, 
+					Constants.ORACLE_ID, 
+					Constants.ORACLE_PW);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				result = rs.getString("id");
 				list.add(result);
 			}
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

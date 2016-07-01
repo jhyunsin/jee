@@ -1,27 +1,49 @@
 package member;
 
-public class MemberServiceImpl implements MemberService{
-MemberBean student=null;
-	@Override
-	public void registstudent(String id, String pw, String name, String ssn) {
-		// 1등록
-	student = new MemberBean(id, pw, name, ssn);
+public class MemberServiceImpl implements MemberService {
+	MemberBean student = null;
+	MemberDAO dao = MemberDAO.getInstance();
+
+	private static MemberServiceImpl instance = new MemberServiceImpl();
+
+	public static MemberServiceImpl getInstance() {
+		return instance;
+	}
+
+	private MemberServiceImpl() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public String showStudent() {
+	public String regist(MemberBean mem) {
+		// 1등록
+		String msg = "";
+		String sql = "insert into member(id,pw,name,reg_date,ssn)" + "values('" + mem.getId() + "','" + mem.getPw()
+				+ "','" + mem.getName() + "','" + mem.getRegDate() + "','" + mem.getSsn() + "')";
+		int result = dao.exeUpdate(sql);
+		if (result == 1) {
+			msg = "회원가입축하";
+		} else {
+			msg = "회원가입실패";
+		}
+
+		return msg;
+	}
+
+	@Override
+	public String show() {
 		// 2보기
 		return student.toString();
 	}
 
 	@Override
-	public void updateStudent(String pw) {
+	public void update(String pw) {
 		// 3수정
 		student.getPw();
 	}
 
 	@Override
-	public void deleteStudent() {
+	public void delete() {
 		// 4삭제
 		student = null;
 	}

@@ -17,7 +17,7 @@ import java.util.Date;
 
 public class MemberBean {// 클래스 시작
 	private String id, name, ssn, pw, regDate, gender; // 남 m 여 w
-	private int age;
+	private int birth;
 
 	public MemberBean() {
 	
@@ -33,8 +33,8 @@ public class MemberBean {// 클래스 시작
 		this.ssn = ssn;
 		this.gender = null;
 
-		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
-		this.regDate = now;
+		
+		
 
 		String[] arr = new String[2];
 		arr = ssn.split("-");
@@ -66,7 +66,8 @@ public class MemberBean {// 클래스 시작
 	 }
 
 	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
+		this.regDate = now;
 	}
 
 	 public void setGender(String gender) {
@@ -77,8 +78,8 @@ public class MemberBean {// 클래스 시작
 	 this.ssn = ssn;
 	 }
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setbirth(int birth) {
+		this.birth = birth;
 	}
 
 	public String getId() {
@@ -105,8 +106,8 @@ public class MemberBean {// 클래스 시작
 		return this.ssn;
 	}
 
-	public int getAge() {
-		return this.age;
+	public int getbirth() {
+		return this.birth;
 	}
 
 	/*
@@ -117,7 +118,7 @@ public class MemberBean {// 클래스 시작
 	@Override
 	public String toString() {
 		return "학생 [아이디=" + id + ", 이름=" + name + ", 주민번호=" + ssn + ", 비밀번호=****" + " 등록일=" + regDate + ", gender="
-				+ gender + ", age=" + age + "]";
+				+ gender + ", birth=" + birth + "]";
 	}
 
 }
