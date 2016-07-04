@@ -32,10 +32,6 @@ public class MemberBean {// 클래스 시작
 		this.name = name;
 		this.ssn = ssn;
 		this.gender = null;
-
-		
-		
-
 		String[] arr = new String[2];
 		arr = ssn.split("-");
 
@@ -65,12 +61,14 @@ public class MemberBean {// 클래스 시작
 
 	 }
 
-	public void setRegDate(String regDate) {
+	public void setRegDate() {
 		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
 		this.regDate = now;
 	}
-
-	 public void setGender(String gender) {
+	public void setRegDate(String regDate) {///오버라이딩
+	 this.regDate = regDate;
+	}
+		public void setGender(String gender) {
 	 this.gender = gender;
 	 }
 
@@ -110,11 +108,7 @@ public class MemberBean {// 클래스 시작
 		return this.birth;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
+
 	@Override
 	public String toString() {
 		return "학생 [아이디=" + id + ", 이름=" + name + ", 주민번호=" + ssn + ", 비밀번호=****" + " 등록일=" + regDate + ", gender="

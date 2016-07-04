@@ -36,6 +36,7 @@ public class JDBCTest { //연결을 확인하는 작업
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
+				
 				result = rs.getString("id");
 				list.add(result);
 			}

@@ -3,6 +3,8 @@
  */
 package member;
 
+import java.util.List;
+
 /**
  * @date : 2016. 6. 17.
  * @author : hb2009
@@ -14,9 +16,18 @@ public interface MemberService {
 
 	public String show();
 
-	public void update(String pw);
+	public String update(MemberBean mem);
 
-	public void delete();
+	public String delete(String id);
+
+	public int count();
+
+	public MemberBean findById(String findID);
+
+	public List<MemberBean> list();
+
+	public List<MemberBean> findByName(String findName);
+
 
 }
 // String sqlCreate = "create table member("
