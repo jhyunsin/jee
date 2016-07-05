@@ -18,7 +18,11 @@ import global.Constants;
  */
 
 public class MemberDAO {
-
+//
+//	"1회원가입2로그인3내정보수정보기4(비번)수정5탈퇴 0종료\n"
+//			+ "------관리자가보는화면------\n" + 
+//"11회원목록12검색(ID)13검색(이름)14 검색(성별)15회원수"))
+	
 	Connection con = null;
 	Statement stmt = null;
 	PreparedStatement pstmt = null; // 7.4 오늘 하나 추가
@@ -34,8 +38,9 @@ public class MemberDAO {
 	private MemberDAO() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public int insert(MemberBean mem){
+////////////////////////////////////////////////////////////////
+	
+	public int insert(MemberBean mem){//회원가입
 	//	int t = 0;
 		String sql = "insert into member(id,pw,name,reg_date,ssn)" + "values('" + mem.getId() + "','" + mem.getPw()
 		+ "','" + mem.getName() + "','" + mem.getRegDate() + "','" + mem.getSsn() + "')";
@@ -45,7 +50,7 @@ public class MemberDAO {
 	return this.exeUpdate(sql);
 	}
 	
-	public int delete(String id){
+	public int delete(String id){//탈퇴
 	String sql = "delete from member where id = '"+id+"'";	
 	return this.exeUpdate(sql);
 	}
@@ -61,7 +66,7 @@ public class MemberDAO {
 
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
-			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.ORACLE_ID, Constants.ORACLE_PW);
+			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USER_ID, Constants.USER_PW);
 			stmt = con.createStatement();
 			result = stmt.executeUpdate(sql);
 		} catch (Exception e) {
@@ -85,8 +90,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 		con = DriverManager.getConnection(//get이니까 리턴값이 필요하다 ,,, 내부적으로 싱글톤을 던진것이다
 				Constants.ORACLE_URL,
-				Constants.ORACLE_ID,
-				Constants.ORACLE_PW);
+				Constants.USER_ID,
+				Constants.USER_PW);
 		stmt = con.createStatement();
 		rs = stmt.executeQuery(sql);
 		while (rs.next()) {
@@ -96,17 +101,16 @@ public class MemberDAO {
 					rs.getString("NAME"), 
 					rs.getString("SSN")
 					);
-		t.setRegDate(rs.getString("REG_DATE"));
-			list.add(t);
-		}
-			
-		
+				t.setRegDate(rs.getString("REG_DATE"));
+				list.add(t);
+			}
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return list; 
+
+		return list;
 	}
 	
 	
@@ -117,7 +121,7 @@ public class MemberDAO {
 		MemberBean temp = null;
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
-			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.ORACLE_ID, Constants.ORACLE_PW);
+			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USER_ID, Constants.USER_PW);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
@@ -141,7 +145,7 @@ public class MemberDAO {
 		List<MemberBean> list = new ArrayList<MemberBean>();
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
-			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.ORACLE_ID, Constants.ORACLE_PW);
+			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USER_ID, Constants.USER_PW);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
@@ -174,8 +178,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 	con = 	DriverManager.getConnection(
 				Constants.ORACLE_URL,
-				Constants.ORACLE_ID,
-				Constants.ORACLE_PW);
+				Constants.USER_ID,
+				Constants.USER_PW);
 		stmt = con.createStatement();
 		rs = stmt.executeQuery(sql);
 		if (rs.next()) {

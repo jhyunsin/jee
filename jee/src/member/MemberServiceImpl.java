@@ -17,12 +17,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String regist(MemberBean mem) {
+	public String regist(MemberBean bean) {
 		// 1등록
 		String msg = "";
 //		String sql = "insert into member(id,pw,name,reg_date,ssn)" + "values('" + mem.getId() + "','" + mem.getPw()
 //				+ "','" + mem.getName() + "','" + mem.getRegDate() + "','" + mem.getSsn() + "')";
-		int result = dao.insert(mem);
+		int result = dao.insert(bean);
 		if (result == 1) {
 			msg = "회원가입축하";
 		} else {

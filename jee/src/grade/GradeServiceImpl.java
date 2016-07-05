@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class GradeServiceImpl implements GradeService {
 
+	GradeDAO dao = GradeDAO.getInstance();
 	private static GradeServiceImpl instance = new GradeServiceImpl();
 	
 	public static GradeServiceImpl getInstance() {
@@ -17,32 +18,33 @@ public class GradeServiceImpl implements GradeService {
 	
 	@Override
 	public int insert(GradeBean grade) {
-		// TODO Auto-generated method stub
-		return 0;
+		// 추가
+		return	dao.insert(grade);
+		 
 	}
 
 	@Override
 	public int update(GradeBean grade) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.update(grade);
 	}
 
 	@Override
-	public int delete(GradeBean grade) {
+	public int delete(int seq) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.delete(seq);
 	}
 
 	@Override
 	public List<GradeBean> list() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.list();
 	}
 
 	@Override
-	public List<GradeBean> findByHakjum(String hakjum) {
+	public List<GradeBean> findById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findById(id);
 	}
 
 	@Override

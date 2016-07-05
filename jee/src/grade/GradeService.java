@@ -7,10 +7,10 @@ public interface GradeService {
 	//exeU
 	public int insert(GradeBean grade);
 	public int update(GradeBean grade);
-	public int delete(GradeBean grade);
+	public int delete(int seq);
 	// exeQ
 	public List<GradeBean> list();
-	public List<GradeBean> findByHakjum(String hakjum);
+	public List<GradeBean> findById(String id);
 	public GradeBean findBySeq(int seq);///아이디역할 관리자는 안다
 	public int count();//총몇명인지
 	

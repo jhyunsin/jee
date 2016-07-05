@@ -1,32 +1,29 @@
 package grade;
 
 public class GradeBean {
-	private int kor, eng, math, seq;
-	private String name,hakjum;
+	private String id,grade,examDate;
+	private int java, sql, html,javascript, seq;
 	
-	public String getName() {
-		return name;
+	
+	public GradeBean() {
 	}
-	public void setName(String name) {
-		this.name = name;
+	
+	public GradeBean(int seq, String grade,int java,int sql, int html,int javascript, String id, String examDate){
+		this.seq = seq;
+		this.grade = grade;
+		this.java = java;
+		this.sql = sql;
+		this.html = html;
+		this.javascript = javascript;
+		this.id = id;
+		this.examDate = examDate;
+		
 	}
-	public int getKor() {
-		return kor;
+	public String getExamDate() {
+		return examDate;
 	}
-	public void setKor(int kor) {
-		this.kor = kor;
-	}
-	public int getEng() {
-		return eng;
-	}
-	public void setEng(int eng) {
-		this.eng = eng;
-	}
-	public int getMath() {
-		return math;
-	}
-	public void setMath(int math) {
-		this.math = math;
+	public void setExamDate(String examDate) {
+		this.examDate = examDate;
 	}
 	public int getSeq() {
 		return seq;
@@ -34,11 +31,70 @@ public class GradeBean {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
+	public int getJava() {
+		return java;
+	}
+	public void setJava(int java) {
+		this.java = java;
+	}
+	public int getSql() {
+		return sql;
+	}
+	public void setSql(int sql) {
+		this.sql = sql;
+	}
+	public int getHtml() {
+		return html;
+	}
+	public void setHtml(int html) {
+		this.html = html;
+	}
+	public int getJavascript() {
+		return javascript;
+	}
+	public void setJavascript(int javascript) {
+		this.javascript = javascript;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getGrade() {
+		
+		int avg= (java+sql+html+javascript)/4;
+		
+		switch (avg/10) {
+		case 9:
+			grade = "A";
+		    break;
+		case 8:
+			grade = "B";
+			break;
+		case 7:
+			grade = "C";
+			break;
+		case 6:
+			grade = "D";
+			break;
+				default:
+			grade = "F";
+			break;
+		}
+		
+		
+		
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
 	@Override
 	public String toString() {
-		return "GradeBean [kor=" + kor + ", eng=" + eng + ", math=" + math + ", seq=" + seq + ", name=" + name + "]";
+		return "성적표 [No."+ seq +", ID=" + id + " , 학점=" + grade + "\n 자바=" + java + ", SQL=" + sql + ", HTML5=" + html
+				+ ", 자바스크립트=" + javascript + "]";
 	}
-
 	
 
 }
