@@ -18,6 +18,8 @@ insert into member(id,pw,name,reg_date,ssn)
 values('hong2','1','홍길동','2015-07-01','301201-1');
 insert into member(id,pw,name,reg_date,ssn)
 values('hong3','1','홍길동','2015-07-01','501201-1');
+insert into member(id,pw,name,reg_date,ssn)
+values('choi','1','최진실','2015-07-01','501201-1');
 
 --READ ()// static 개념으로 접근한다
 select * from member;-- list

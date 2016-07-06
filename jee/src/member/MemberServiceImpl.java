@@ -5,7 +5,7 @@ import java.util.List;
 public class MemberServiceImpl implements MemberService {
 	MemberBean student = null;
 	MemberDAO dao = MemberDAO.getInstance();
-
+	
 	private static MemberServiceImpl instance = new MemberServiceImpl();
 
 	public static MemberServiceImpl getInstance() {

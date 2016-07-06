@@ -21,13 +21,13 @@ public class GradeController {
 
 		GradeService service = GradeServiceImpl.getInstance();
 		GradeDAO dao = GradeDAO.getInstance();
-				
-		
+
 		while (true) {
-			switch (JOptionPane.showInputDialog("1추가 2수정 3삭제 4전체조회 5학점을 포함한 시험내역 6시퀀스조회(ID) 0종료")) {
-		
+			switch (JOptionPane.showInputDialog("1추가 2수정 3삭제 4전체조회 5 SEQ로 조회 "
+					+ "6 ID로조회 7 날짜별 응시생수 0종료")) {
+
 			case "1":
-				
+
 				String temp = JOptionPane.showInputDialog("자바,SQl,HTML,JAVAscript,ID,examDate");
 				String[] tempArr = temp.split(",");
 				GradeBean grade = new GradeBean();
@@ -38,7 +38,7 @@ public class GradeController {
 				grade.setId(tempArr[4]);
 				grade.setExamDate(tempArr[5]);
 				JOptionPane.showMessageDialog(null, service.insert(grade));
-				
+
 				break;
 			case "2":
 				GradeBean grade2 = new GradeBean();
@@ -57,17 +57,21 @@ public class GradeController {
 				JOptionPane.showMessageDialog(null, service.delete(Integer.parseInt(temp3)));
 				break;
 			case "4":
-				JOptionPane.showMessageDialog(null, service.list());
+				// JOptionPane.showMessageDialog(null, service.list());
+				GradeUI ui = new GradeUI();
+
 				break;
 			case "5":
-				
-				
+
+				JOptionPane.showMessageDialog(null, service.findBySeq(JOptionPane.showInputDialog("조회할 SEQ")));
+
 				break;
 			case "6":
 				JOptionPane.showMessageDialog(null, service.findById(JOptionPane.showInputDialog("조회할 id입력")));
 				break;
 			case "7":
-
+	String ExamDate = 	JOptionPane.showInputDialog("조회하려는 시험일자(예:2016-05)");
+				JOptionPane.showMessageDialog(null, service.count(ExamDate));
 				break;
 			case "0":
 

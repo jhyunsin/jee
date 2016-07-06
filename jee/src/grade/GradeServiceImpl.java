@@ -38,7 +38,10 @@ public class GradeServiceImpl implements GradeService {
 	@Override
 	public List<GradeBean> list() {
 		// TODO Auto-generated method stub
-		return dao.list();
+	List<GradeBean> list = 	dao.list();
+		return list;
+	
+	
 	}
 
 	@Override
@@ -48,15 +51,15 @@ public class GradeServiceImpl implements GradeService {
 	}
 
 	@Override
-	public GradeBean findBySeq(int seq) {
+	public GradeBean findBySeq(String seq) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findBySeq(seq);
 	}
 
 	@Override
-	public int count() {
+	public int count(String examDate) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.count(examDate);
 	}
 
 	// GradeBean grade = new GradeBean();///

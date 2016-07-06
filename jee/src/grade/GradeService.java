@@ -11,8 +11,8 @@ public interface GradeService {
 	// exeQ
 	public List<GradeBean> list();
 	public List<GradeBean> findById(String id);
-	public GradeBean findBySeq(int seq);///아이디역할 관리자는 안다
-	public int count();//총몇명인지
+	public GradeBean findBySeq(String seq);///아이디역할 관리자는 안다
+	public int count(String examDate);//총몇명인지
 	
 	
 	

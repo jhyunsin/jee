@@ -16,88 +16,80 @@ import global.Constants;
  * @story :
  */
 public class AccountBean {
-	private int accountNo; // 인스턴스 변수는 초기화를 하지 않는다
-	private String name;
-	private int money;
-	// private String bankName; 상수처리 한다 21줄
-	private String pw;
-	private String id;// 속성은 감추고 기능은 오픈한다
-	public final static String BANK_NAME = "한빛은행"; // 상수 instance
+	private int accountNo, money, birth;
+	private String name, pw, ssn, regDate, gender, id;
+	public final static String BANK_NAME = "한빛은행";
 
-	
-	/**
-	 * 
-	 */
-	public AccountBean() {
-		// default constructor 기본 생성자
-		// 생성자 오버로딩
+	public int getAccountNo() {
+		return accountNo;
 	}
-	
-	public AccountBean(String name,String id,String pw) { // 생성자
-		this.accountNo = (int) (Math.random() * 999999) + 100000;
-		this.name = name;
-		this.id = id;
-		this.pw = pw;
-		
-	}
-	
-	public void setAccountNo() {
-		this.accountNo = (int) (Math.random() * 999999) + 100000;
-	}
-		
-	public void setAccountNo(int accountNo){
+
+	public void setAccountNo(int accountNo) {
 		this.accountNo = accountNo;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
 
-	public void setId(String id) {
-		this.id = id;
+	public int getMoney() {
+		return money;
 	}
 
 	public void setMoney(int money) {
 		this.money = money;
 	}
 
-	// public void setBankname(String bankname) {
-	// this.bankName = bankname;
-	// }
+	public int getBirth() {
+		return birth;
+	}
+
+	public void setBirth(int birth) {
+		this.birth = birth;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPw() {
+		return pw;
+	}
 
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getSsn() {
+		return ssn;
 	}
 
-	public int getAccountNo() {
-		return this.accountNo;
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
 
-	public int getMoney() {
-		return this.money;
+	public String getRegDate() {
+		return regDate;
 	}
 
-	// public String getBankname() {
-	// return this.bankName;
-	// }
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
 
-	public String getPw() {
-		return this.pw;
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getId() {
-		return this.id;
+		return id;
 	}
-	
 
-	
-	@Override
-	public String toString() {// 메소드 오버라이딩
-		return Constants.BANK_NAME+" [계좌정보=" + accountNo + ", 이름=" + name + ", 잔액=" + money + ", 비번=" + pw + ", 아이디="
-				+ id + "]";
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

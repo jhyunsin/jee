@@ -1,14 +1,13 @@
 package grade;
 
 public class GradeBean {
-	private String id,grade,examDate;
-	private int java, sql, html,javascript, seq;
-	
+	private String id,seq,grade,examDate;
+	private int java, sql, html,javascript;
 	
 	public GradeBean() {
 	}
 	
-	public GradeBean(int seq, String grade,int java,int sql, int html,int javascript, String id, String examDate){
+	public GradeBean(String seq, String grade,int java,int sql, int html,int javascript, String id, String examDate){
 		this.seq = seq;
 		this.grade = grade;
 		this.java = java;
@@ -25,10 +24,10 @@ public class GradeBean {
 	public void setExamDate(String examDate) {
 		this.examDate = examDate;
 	}
-	public int getSeq() {
+	public String getSeq() {
 		return seq;
 	}
-	public void setSeq(int seq) {
+	public void setSeq(String seq) {
 		this.seq = seq;
 	}
 	public int getJava() {
