@@ -4,7 +4,9 @@
 package bank;
 
 import java.util.List;
+import java.util.Map;
 
+import global.CommandService;
 import member.MemberBean;
 
 /**
@@ -13,7 +15,7 @@ import member.MemberBean;
  * @file : AccountService.java
  * @story :
  */
-public interface AccountService {
+public interface AccountService extends CommandService {
 
 
 	// 1개설
@@ -31,17 +33,14 @@ public interface AccountService {
 	// 5해지
 	public int deleteAccount(int AccountNo);
 
-	// 6조회 (전체)
-	public List<AccountBean> accountList(); // 빅빈을 사용한다 빈은 사용하지 않는다
-
+	
 	// 7조회(계좌번호)
 	public AccountBean findByAccountNo();
 
 	// 8 조회(이름)
-	public List<AccountBean> findByName();
+	public List<?> findBy(String name);
 
-	// 9통장(전체통장수)
-	public int count();
+
 // 원래 요구사항에는 없었지만, 필요에 따라 생성하는 매소드
 	public int restMoney(int accNo);
 	

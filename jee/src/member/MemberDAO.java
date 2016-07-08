@@ -30,7 +30,6 @@ public class MemberDAO {
 	
 	ResultSet rs = null; // executeQuery()에서만 리턴받는객체
 	private static MemberDAO instance = new MemberDAO();
-
 	public static MemberDAO getInstance() {
 		return instance;
 	}
@@ -197,4 +196,16 @@ public class MemberDAO {
 			
 			return count;
 	}
+
+		public boolean login(MemberBean member) {
+			// TODO Auto-generated method stub
+			boolean loginOk = false;
+			MemberBean m = this.findById(member.getId());
+			
+			if (m.getPw().equals(member.getPw())) {//멤버에서 넘어온 비번과 지금 비번이 같다면...
+				loginOk = true;
+			}
+			
+			return loginOk;
+		}
 }

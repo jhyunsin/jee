@@ -5,6 +5,8 @@ package member;
 
 import java.util.List;
 
+
+
 /**
  * @date : 2016. 6. 17.
  * @author : hb2009
@@ -28,6 +30,7 @@ public interface MemberService {
 
 	public List<MemberBean> findByName(String findName);
 
+	public String login(MemberBean member);
 
 }
 // String sqlCreate = "create table member("

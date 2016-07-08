@@ -3,7 +3,9 @@
  */
 package bank;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import member.MemberBean;
 
@@ -15,13 +17,14 @@ import member.MemberBean;
   */
 public class AccountServiceImpl implements AccountService {
 	AccountDAO dao = AccountDAO.getInstance();
+	private Map<?,?> map ; ///인스턴스변수  ---- private을 걸어야 은닉화
 	private static AccountServiceImpl instance = new AccountServiceImpl();
 	public static AccountServiceImpl getInstance() {
 	return instance;
 }
 
 	private AccountServiceImpl() {
-		
+	map = new HashMap<String,AccountMemberBean>();
 	}
 
 	@Override
@@ -85,9 +88,10 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public List<AccountBean> accountList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<?> list() {
+		// 전체조회
+		
+		return dao.selectAll(); ///sql 문을 메소드 이름을 잡는다
 	}
 
 	@Override
@@ -97,7 +101,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public List<AccountBean> findByName() {
+	public List<?> findBy(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -112,6 +116,13 @@ public class AccountServiceImpl implements AccountService {
 	public int restMoney(int accNo) {
 		// TODO Auto-generated method stub
 		return dao.selectMoney(accNo);
+	}
+
+	@Override
+	public Map<?, ?> map() {
+	map = new HashMap<String,AccountMemberBean>();
+	map = dao.selectMap();	
+	return map;
 	}
 
 

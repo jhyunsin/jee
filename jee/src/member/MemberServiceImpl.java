@@ -2,10 +2,17 @@ package member;
 
 import java.util.List;
 
+import bank.AccountService;
+import bank.AccountServiceImpl;
+
+
+
 public class MemberServiceImpl implements MemberService {
 	MemberBean student = null;
-	MemberDAO dao = MemberDAO.getInstance();
 	
+	MemberDAO dao = MemberDAO.getInstance();
+	AccountService accService = AccountServiceImpl.getInstance();//// 5.6번
+	MemberBean session;/// 로긴정보만 담당하는 인스턴스변수
 	private static MemberServiceImpl instance = new MemberServiceImpl();
 
 	public static MemberServiceImpl getInstance() {
@@ -88,7 +95,24 @@ public class MemberServiceImpl implements MemberService {
 		return dao.findByname(findName);
 	}
 		
+	public String login(MemberBean member) {
+		//로그인
+		String result = "";
+
+			if (dao.login(member)) {
+				
+				result = "로그인성공";
+			session = dao.findById(member.getId());
+			accService.map();
+			}else {
+				result = "ID가 없습니다";
+			}
+			
 		
+		return result;
+	}
+	
+	
 	}
 
 

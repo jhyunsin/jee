@@ -26,7 +26,8 @@ public class AccountController {
 		
 		while (true) {
 			switch (JOptionPane
-					.showInputDialog("1개설 2 입금 3출금 4 비번변경 5 해지 " + "6 조회(전체) 7계좌번호로 조회 8 이름으로 조회 9 통장수 0 종료")) {
+					.showInputDialog("1개설 2 입금 3출금 4 비번변경 5 해지 " + 
+			"6 조회(전체) 7계좌번호로 조회 8 이름으로 조회 9 통장수 10 로그인 0 종료")) {
 					case "1":
 						String id = JOptionPane.showInputDialog("ID");
 						String msg = service.openAccount(id);
@@ -55,16 +56,21 @@ public class AccountController {
 				JOptionPane.showMessageDialog(null, service.deleteAccount(Integer.parseInt(JOptionPane.showInputDialog("해지할 계좌번호"))));
 				
 				break;
-//			case "6":
-//				break;
-//			case "7":
-//				break;
-//			case "8":
-//				break;
-			case "9":
-				JOptionPane.showMessageDialog(null, service.count());
+			case "6":
+				BankUI ui = new BankUI();
 				
 				break;
+			case "7":
+				break;
+			case "8":
+				break;
+			case "9":
+				JOptionPane.showMessageDialog(null, service.count());
+				break;
+			case "10":
+				
+				break;
+				
 			case "0":
 				return;
 
