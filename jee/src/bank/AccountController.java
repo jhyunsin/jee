@@ -44,12 +44,12 @@ public class AccountController {
 				
 				break;
 			case "4":
-				MemberBean stu2 = new MemberBean();
+				AccountBean acc = new AccountBean();
 				String tempStr3 = JOptionPane.showInputDialog("ID,pw변경");
 				String[] tempArr3 = tempStr3.split(",");
-				stu2.setId(tempArr3[0]);
-				stu2.setPw(tempArr3[1]);
-				JOptionPane.showMessageDialog(null, service.updateAccount(stu2));
+				acc.setId(tempArr3[0]);
+				acc.setPw(tempArr3[1]);
+				JOptionPane.showMessageDialog(null, service.updateAccount(acc));
 				
 				break;
 			case "5":

@@ -16,7 +16,7 @@ import java.util.Date;
 
 
 public class MemberBean {// 클래스 시작
-	private String id, name, ssn, pw, regDate, gender; // 남 m 여 w
+	private String id, name, ssn, pw, regDate, gender,proImg; // 남 m 여 w
 	private int birth;
 
 	public MemberBean() {
@@ -48,7 +48,23 @@ public class MemberBean {// 클래스 시작
 
 	}
 
-	 public void setId(String id) {
+	 public String getProImg() {
+		return proImg;
+	}
+
+	public void setProImg(String proImg) {
+		this.proImg = proImg;
+	}
+
+	public int getBirth() {
+		return birth;
+	}
+
+	public void setBirth(int birth) {
+		this.birth = birth;
+	}
+
+	public void setId(String id) {
 	 this.id = id;
 	 }
 

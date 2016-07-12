@@ -205,6 +205,10 @@ public class AccountDAO {
 		
 		return map;
 	}
+	public int updageAccount(AccountBean acc) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }

@@ -28,7 +28,7 @@ public interface AccountService extends CommandService {
 	public String withdraw(String withdrowInfo);
 
 	// 4수정..사용자의 요청에 의해 비번만 전환가능
-	public String updateAccount(MemberBean stu2);
+	public String updateAccount(AccountBean acc);
 
 	// 5해지
 	public int deleteAccount(int AccountNo);

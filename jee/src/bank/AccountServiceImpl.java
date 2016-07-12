@@ -76,9 +76,14 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public String updateAccount(MemberBean stu2) {
-		// TODO Auto-generated method stub
-		return null;
+	public String updateAccount(AccountBean acc) {
+		// 비밀번호 수정
+		String result = "";
+//	if (dao.fina) {
+//		
+//	}
+		 
+		 return "";
 	}
 
 	@Override
