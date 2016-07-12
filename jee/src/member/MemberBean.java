@@ -13,16 +13,14 @@ import java.util.Date;
  * @story :
  */
 
-
-
 public class MemberBean {// 클래스 시작
-	private String id, name, ssn, pw, regDate, gender,proImg; // 남 m 여 w
+	private String id, name, ssn, pw, regDate, gender, proImg; // 남 m 여 w
 	private int birth;
 
 	public MemberBean() {
-	
+
 	}
-	
+
 	// public final static String
 
 	public MemberBean(String id, String pw, String name, String ssn) {// 생성자
@@ -48,7 +46,7 @@ public class MemberBean {// 클래스 시작
 
 	}
 
-	 public String getProImg() {
+	public String getProImg() {
 		return proImg;
 	}
 
@@ -65,32 +63,34 @@ public class MemberBean {// 클래스 시작
 	}
 
 	public void setId(String id) {
-	 this.id = id;
-	 }
+		this.id = id;
+	}
 
-	 public void setPw(String pw) {
-	 this.pw = pw;
-	 }
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
 
-	 public void setName(String name) {
-	 this.name = name;
+	public void setName(String name) {
+		this.name = name;
 
-	 }
+	}
 
 	public void setRegDate() {
 		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
 		this.regDate = now;
 	}
-	public void setRegDate(String regDate) {///오버라이딩
-	 this.regDate = regDate;
-	}
-		public void setGender(String gender) {
-	 this.gender = gender;
-	 }
 
-	 public void setSsn(String ssn) {
-	 this.ssn = ssn;
-	 }
+	public void setRegDate(String regDate) {/// 오버라이딩
+		this.regDate = regDate;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
+	}
 
 	public void setbirth(int birth) {
 		this.birth = birth;
@@ -123,7 +123,6 @@ public class MemberBean {// 클래스 시작
 	public int getbirth() {
 		return this.birth;
 	}
-
 
 	@Override
 	public String toString() {
