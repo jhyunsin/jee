@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>한빛 아카데미</title>
+	<meta charset="UTF-8" />
+	<title>한빛아카데미</title>
 <style type="text/css">
 
 </style>
@@ -78,11 +81,11 @@ ul {
 
 	<div id="nav">
 		<ul>
-			<li><a class="active" href="member/memberController.html">회원관리</a>
+			<li><a class="active" href="../member/member_controller.jsp">회원관리</a>
 			</li>
-			<li><a href="grade/gradeController.html">성적관리</a></li>
-			<li><a href="bank/bankController.html">계좌관리</a></li>
-			<li><a href="global/school_info.html">신입생교육영상보기</a></li>
+			<li><a href="#">성적관리</a></li>
+			<li><a href="#">계좌관리</a></li>
+			<li><a href="school_info.jsp">신입생교육영상보기</a></li>
 		</ul>
 	</div>
 
@@ -97,7 +100,6 @@ ul {
 	</div>
 
 	<div id="footer">Copyright � W3Schools.com</div>
-
-
+	
 </body>
 </html>

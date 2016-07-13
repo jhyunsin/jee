@@ -4,9 +4,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Implicit object : request</title>
 </head>
 <body>
-	
+<!-- 리퀘스트는 무조건 게터 -->	
+요청 URI : <%=request.getRequestURI() %><br>
+컨텍스트 경로 : <%= request.getContextPath() %>
 </body>
 </html>
