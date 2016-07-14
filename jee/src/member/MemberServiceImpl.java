@@ -100,12 +100,11 @@ public class MemberServiceImpl implements MemberService {
 		String result = "";
 
 			if (dao.login(member)) {
-				
-				result = "로그인성공";
-			session = dao.findById(member.getId());
+					session = dao.findById(member.getId());
+			result = session.getName();
 			accService.map();
 			}else {
-				result = "ID가 없습니다";
+				result = "";
 			}
 			
 		

@@ -16,9 +16,6 @@
 	text-align: center;
 	padding: 5px;
 }
-
-
-
 #section {
 	width: 350px;
 	float: left;

@@ -87,9 +87,10 @@ ul {
 		<div class="box">
 		<h2>서비스를 이용하시려면 회원가입을 하세요</h2>
 		<a href="<%=ctx %>/member/service/regist.jsp">회원가입 하러 가기 </a> 
-		<br />
-		 <br />
+		<br /><br />
 		<a href="<%=ctx %>/member/service/login.jsp">로긴하러 가기 </a>
+		<br/>
+		<a href="<%=ctx %>/global/main.jsp">메인바로가기</a>
 		 <br /> <br /> <br />
 		</div>
 		
