@@ -245,4 +245,31 @@ public class MemberDAO {
          
          return existOK;
 		}
+
+		public int findId(String id) {
+			// 아이디찾기 for 성별수
+			int result = 0;
+			String sql = "select count(*) count from member where id = ?";
+			
+			try {
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+			if (rs.next()) {
+				result = rs.getInt("count");
+			}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return result;
+		}
+
+		public int genderCount(String gender) {
+			// 성별 회원수
+		int	result = 0;
+		String sql = "select count(*) count form member where";
+			
+			return result;
+		}
 }

@@ -16,7 +16,7 @@ import java.util.List;
 public interface MemberService {
 	public String regist(MemberBean bean);
 
-	public String show();
+	public MemberBean show();
 
 	public String update(MemberBean mem);
 
@@ -32,6 +32,9 @@ public interface MemberService {
 
 	public String login(MemberBean member);
 
+	public int genderCount(String gender);	
+	
+	
 }
 // String sqlCreate = "create table member("
 // + "id varchar2(20) primary key,"

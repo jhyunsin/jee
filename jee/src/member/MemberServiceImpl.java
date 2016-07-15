@@ -40,9 +40,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String show() {
+	public MemberBean show() {
 		// 2보기
-		return student.toString();
+		return session;
 	}
 
 	@Override
@@ -109,6 +109,12 @@ public class MemberServiceImpl implements MemberService {
 			
 		
 		return result;
+	}
+
+	@Override
+	public int genderCount(String gender) {
+		// TODO Auto-generated method stub
+		return dao.genderCount(gender);
 	}
 	
 	

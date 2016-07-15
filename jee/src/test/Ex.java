@@ -11,14 +11,19 @@ package test;
 
 public class Ex {
 public static void main(String[] args) {
-	int i = 0,j=0;
-	for ( i = 1; i <= 10; i++) {
-		j+=i;
-		if (i==10) {
-			break;
-		}
+int a= 0;
+	if (a>0) {
 		
-	}		
+	} else {
+
+		if (a>3) {
+			for (int i = 0; i < args.length; i++) {
+				
+			}
+		}
+	}
+	
+	
 }
 }
 

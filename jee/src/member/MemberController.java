@@ -3,6 +3,7 @@
  */
 package member;
 
+import javax.print.attribute.standard.JobKOctetsProcessed;
 import javax.swing.JOptionPane;
 
 import com.sun.scenario.effect.AbstractShadow.ShadowMode;
@@ -51,6 +52,7 @@ public class MemberController {
 				JOptionPane.showMessageDialog(null, result4);
 				break;
 			case "3":
+				JOptionPane.showMessageDialog(null, service.show());
 				break;
 			case "4":
 				MemberBean tempBean3 = new MemberBean();
@@ -66,12 +68,8 @@ public class MemberController {
 				
 				break;
 			case "5":
-			//	MemberBean tempBean4 = new MemberBean();
-//				String tempStr4 = JOptionPane.showInputDialog("ID삭제");
-//				JOptionPane.showMessageDialog(null, service.delete(tempStr4));
-				JOptionPane.showMessageDialog(null, service.delete(JOptionPane.showInputDialog("id삭제")));
-			
-				
+				String result3 = service.delete(JOptionPane.showInputDialog("ID"));
+				JOptionPane.showMessageDialog(null, result3);
 				
 				break;
 			case "11":
@@ -89,8 +87,10 @@ public class MemberController {
 				JOptionPane.showMessageDialog(null, service.findByName(findName));
 				break;
 			case "14":
+		 
+		 JOptionPane.showMessageDialog(null,service.genderCount(JOptionPane.showInputDialog("성별 입력"))+" 명"	 );
 				
-				break;
+		break;
 			
 			case "15":
 				int count = service.count();

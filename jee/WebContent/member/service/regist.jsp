@@ -15,7 +15,7 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 <body>
 	<br/><br/><br/>
 	<div class="box">
-	<form action="<%=ctx %>/member/result/regist_result.jsp" method="post">
+	<form action="<%=ctx %>/member/result/update_result.jsp" method="post">  
 	<span class="meta">	이름  </span><input type="text" name="name"/><br/>
 	<span class="meta">	ID </span> <input type="text" name="id"/><br/>
 	<span class="meta">	비밀번호 </span> <input type="text" name="pw"/><br/>

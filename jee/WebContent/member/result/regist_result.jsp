@@ -29,11 +29,11 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 
 		if(name.equals("")||id.equals("")||pw.equals("")||ssn.equals("")){
 			%>
-			<h2>로그인 실패!!</h2>
-			<a href="../service/login.jsp">다시 시도하기</a>
+			<h2>회원가입 실패!!</h2>
+			<a href="../service/regist.jsp">다시 시도하기</a>
 		
 			<%
-		}else{
+		}else {
 			member.setName(name);
 			member.setId(id);
 			member.setPw(pw);
@@ -45,44 +45,39 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 			if(spec.equals("")){
 				%>
 				<h2>로그인 실패!!</h2>
-				<a href="../service/login.jsp">다시 시도하기</a>
+				<a href="../service/resgist.jsp">다시 시도하기</a>
 				<%
-			}else{
-				response.sendRedirect(ctx+"/global/main.jsp");
+			}else {
+%>
+				<span class="meta">	이름 </span><%=request.getParameter("name") %> <br/>
+				<span class="meta">	ID </span> <%=request.getParameter("id") %><br/>
+				<span class="meta">	비밀번호 </span> <%=request.getParameter("pw") %><br/>
+				<span class="meta">	SSN  </span><%= request.getParameter("ssn") %><br/>
+				<span class="meta">전공	 </span> <%= request.getParameter("major") %><br/>
+				<span class="meta">수강과목	 </span>
+				<% 
+				String[] subjects = request.getParameterValues("subject");
+				if(subjects != null){
+					for(int i=0; i<subjects.length; i++){
+				%> <%= subjects[i]%> <%
+					}
+					}
+				%>
+				
+				<br/><br /><br />
+				회원가입을 축하드립니다. <%= request.getParameter("name") %> 님<br/>
+<% 
 			}
 		}
-	%>
+		%>
+			
+			<br /><br /><br /><a href="<%=ctx %>/member/member_controller.jsp">
+			<img src="<%= ctx %>/img/member.png" alt="member" style="width:50px" /></a>
+			<a href="<%=ctx %>/index.jsp">
+					<img src="<%= ctx %>/img/home.png" alt="home" style="width:50px" /></a>
+			
 	
 	
-	
-	
-	
-	
-	
-	
-	<span class="meta">	이름 </span><%=request.getParameter("name") %> <br/>
-	<span class="meta">	ID </span> <%=request.getParameter("id") %><br/>
-	<span class="meta">	비밀번호 </span> <%=request.getParameter("pw") %><br/>
-	<span class="meta">	SSN  </span><%= request.getParameter("ssn") %><br/>
-	<span class="meta">전공	 </span> <%= request.getParameter("major") %><br/>
-	<span class="meta">수강과목	 </span>
-	<% 
-	String[] subjects = request.getParameterValues("subject");
-	if(subjects != null){
-		for(int i=0; i<subjects.length; i++){
-	%> <%= subjects[i]%> <%
-		}
-		}
-	%>
-	
-	<br/>
-	회원가입을 축하드립니다. <%= request.getParameter("name") %> 님<br/>
-
-<a href="<%=ctx %>/member/member_controller.jsp">
-<img src="<%= ctx %>/img/member.png" alt="member" style="width:50px" /></a>
-<a href="<%=ctx %>/index.jsp">
-		<img src="<%= ctx %>/img/home.png" alt="home" style="width:50px" />
-	</a>
 	
 	</div>
 </body>
