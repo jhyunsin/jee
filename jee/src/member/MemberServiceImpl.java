@@ -20,7 +20,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	private MemberServiceImpl() {
-		// TODO Auto-generated constructor stub
+	//	session = new MemberBean(); 
 	}
 
 	@Override

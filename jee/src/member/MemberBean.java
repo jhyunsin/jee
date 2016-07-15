@@ -14,15 +14,25 @@ import java.util.Date;
  */
 
 public class MemberBean {// 클래스 시작
-	private String id, name, ssn, pw, regDate, gender, proImg; // 남 m 여 w
+	
+	private String id, name, ssn, pw, regDate, gender, proImg, email; // 남 m 여 w
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		System.out.println("이메일설정"+email);
+		this.email = email;
+	}
+
 	private int birth;
 
 	public MemberBean() {
-
+		/// 기본생성자
 	}
 
 	// public final static String
-
+	
 	public MemberBean(String id, String pw, String name, String ssn) {// 생성자
 
 		this.id = id;
@@ -84,7 +94,7 @@ public class MemberBean {// 클래스 시작
 		this.regDate = regDate;
 	}
 
-	public void setGender(String gender) {
+	public void setGenderAndBirth(String ssn) {
 		this.gender = gender;
 	}
 
@@ -92,9 +102,7 @@ public class MemberBean {// 클래스 시작
 		this.ssn = ssn;
 	}
 
-	public void setbirth(int birth) {
-		this.birth = birth;
-	}
+	
 
 	public String getId() {
 		return this.id;
@@ -123,10 +131,10 @@ public class MemberBean {// 클래스 시작
 	public int getbirth() {
 		return this.birth;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "학생 [아이디=" + id + ", 이름=" + name + ", 주민번호=" + ssn + ", 비밀번호=****" + " 등록일=" + regDate + ", gender="
+		return "학생 [이메일 : "+email+"아이디=" + id + ", 이름=" + name + ", 주민번호=" + ssn + ", 비밀번호=****" + " 등록일=" + regDate + ", gender="
 				+ gender + ", birth=" + birth + "]";
 	}
 

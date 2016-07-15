@@ -36,8 +36,8 @@
 		
 		<table id="member_detail">
 				<tr>
-				<td rowspan="3" style="width:30%">
-				<img src="<%=ctx %>/img/w3schools.jpg" alt="W3Schools.com" width="104"
+				<td rowspan="4" style="width:30%">
+				<img src="<%=ctx %>/img/member/<%=service.show().getProImg() %>" alt="hong" width="104"
 			height="142"></td>
 				<td style="width:20%" class="font_bold bg_color_yellow">ID</td>
 				<td style="width:40%"><%= service.show().getId() %></td>
@@ -54,8 +54,13 @@
 				<td><%= service.show().getGender() %></td>
 			</tr>
 			<tr>
+				<td class="font_bold bg_color_yellow">이메일</td>
+				<td colspan="2"><%= service.show().getEmail() %></td>
+				
+			</tr>
+			<tr>
 				<td class="font_bold bg_color_yellow">생년월일</td>
-				<td colspan="2"><%= service.show().getSsn() %></td>
+				<td colspan="2"><%= service.show().getBirth() %></td>
 			</tr>
 			<tr>
 				<td class="font_bold bg_color_yellow">등록일</td>

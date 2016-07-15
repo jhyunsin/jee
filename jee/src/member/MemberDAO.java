@@ -106,13 +106,14 @@ public class MemberDAO {
 		stmt = con.createStatement();
 		rs = stmt.executeQuery(sql);
 		while (rs.next()) {
-		MemberBean t = new MemberBean(
-					rs.getString("ID"),
-					rs.getString("PW"),
-					rs.getString("NAME"), 
-					rs.getString("SSN")
-					);
+				MemberBean t = new MemberBean();
+				t.setId(rs.getString("ID"));
+				t.setPw(rs.getString("PW"));
+				t.setName(rs.getString("NAME"));
+				t.setEmail(rs.getString("EMAIL"));
+				t.setGenderAndBirth(rs.getString("SSN"));
 				t.setRegDate(rs.getString("REG_DATE"));
+				t.setProImg(rs.getString("PROFILE_IMG"));
 				list.add(t);
 			}
 
@@ -120,7 +121,7 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+			System.out.println(list.get(3));
 		return list;
 	}
 	
@@ -136,10 +137,16 @@ public class MemberDAO {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				temp = new MemberBean(rs.getString("ID"), rs.getString("PW"), rs.getString("NAME"),
-						rs.getString("SSN"));
-				temp.setRegDate(rs.getString("REG_DATE"));
-
+				temp = new MemberBean();
+			temp.setId(rs.getString("ID"));	 
+			temp.setPw(rs.getString("PW"));	 
+			temp.setName(rs.getString("NAME"));	
+			temp.setSsn(rs.getString("SSN"));	
+			temp.setRegDate(rs.getString("REG_DATE"));
+			temp.setGenderAndBirth((rs.getString("SSN")));;
+			temp.setEmail((rs.getString("EMAIL")));
+			temp.setProImg(((rs.getString("PROFILE_IMG"))));
+			
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

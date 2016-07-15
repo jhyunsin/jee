@@ -23,13 +23,14 @@ div.memberClass{font-size: x-large;}
 			<li><a href="service/update.jsp">내정보수정(비번)</a></li>
 		  	<li><a href="service/delete.jsp">탈퇴..</a></li>
 			<li><a href="service/login.jsp">로그인</a></li>
+			<li><a href="service/logout.jsp">로그아웃</a></li>
 			<li><a href="service/list.jsp">리스트</a></li>
 			<li><a href="service/findBy.jsp">검색(이름)</a></li>
 			<li><a href="service/count.jsp">회원수</a></li>
 		</ol>
 		</div>
 
-		<a href="<%=ctx%>/memberController.jsp"><br />
+		<a href="<%=ctx%>/member/memberController.jsp"><br />
 		<br /> <img src="<%=ctx%>/img/member.png" alt="member"
 			style="width: 30px" /></a> <a href="<%=ctx%>/index.jsp"> <img
 			src="<%=ctx%>/img/home.png" alt="member" style="width: 30px" />
