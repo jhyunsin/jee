@@ -53,12 +53,15 @@ public class MemberDAO {
 	
 	public int insert(MemberBean mem){//회원가입
 		int result = 0;
-		String sql = "insert into member(id,pw,name,reg_date,ssn,email,profile_img)" + "values(?,?,?,?,?,?,?)";
+		String sql = "insert into member(id,pw,name,reg_date,ssn,email,profile_img)" + ""
+				+ "values(?,?,?,?,?,?,?)";
 	
 	 try {
 		pstmt = con.prepareStatement(sql);
 	pstmt.setString(1, mem.getId());
 	pstmt.setString(2, mem.getPw());
+	
+	
 	pstmt.setString(3, mem.getName());
 	pstmt.setString(4, mem.getRegDate());
 	pstmt.setString(5, mem.getSsn());
