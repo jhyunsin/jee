@@ -18,7 +18,7 @@
 	<span class="meta">	ID </span> <input type="text" name="id"/><br/>
 	<p></p><br />
 
-<a href="<%=ctx %>/memberController.jsp">
+<a href="<%=ctx %>/member/member_controller.jsp">
 <img src="<%=ctx %>/img/member.png" alt="member" style="width:30px" /></a>
 <a href="<%=ctx %>/index.jsp">
 		<img src="<%=ctx %>/img/home.png" alt="member" style="width:30px" />

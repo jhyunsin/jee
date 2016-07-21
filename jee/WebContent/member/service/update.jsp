@@ -65,11 +65,11 @@
 			</tr>
 			<tr>
 				<td class="font_bold bg_color_yellow">생년월일</td>
-				<td colspan="2"><%= service.show().getSsn() %></td>
+				<td colspan="2"><%= service.show().getBirth() %></td>
 			</tr>
 			<tr>
 				<td class="font_bold bg_color_yellow">등록일</td>
-				<td colspan="2"><%= service.show().getEmail() %></td>
+				<td colspan="2"><%= service.show().getRegDate() %></td>
 				
 			</tr>
 		</table>
@@ -81,10 +81,10 @@
 		<p>
 			
 		</p>
-		<a href="<%=ctx %>/memberController.jsp">
+<a href="<%=ctx %>/member/member_controller.jsp">
 <img src="<%=ctx %>/img/member.png" alt="member" style="width:30px" /></a>
 <a href="<%=ctx %>/index.jsp">
-		<img src="../../img/home.png" alt="member" style="width:30px" />
+		<img src="<%=ctx %>/img/home.png" alt="member" style="width:30px" />
 		</a>
 
 	</div>

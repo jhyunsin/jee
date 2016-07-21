@@ -18,7 +18,7 @@ iframe.ifrm{border:none;width: 400px; height:400px}
 
 <h1>정보검색</h1>
 <iframe src="image.jsp" class="ifrm" style="border:none;"></iframe>
-<a href="<%=ctx %>/memberController.jsp"><br /><br />
+<a href="<%=ctx %>/member/member_controller.jsp"><br /><br />
 <img src="<%=ctx %>/img/member.png" alt="member" style="width:30px" /></a>
 
 <a href="<%=ctx %>/index.jsp">

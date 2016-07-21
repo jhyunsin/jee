@@ -26,12 +26,12 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String ssn = request.getParameter("ssn");
+	String email = request.getParameter("email");
 
 		if(name.equals("")||id.equals("")||pw.equals("")||ssn.equals("")){
 			%>
 			<h2>회원가입 실패!!</h2>
-			<a href="../service/regist.jsp">다시 시도하기</a>
-		
+<a href="<%=ctx %>/member/service/resgist.jsp">다시 시도하기</a>		
 			<%
 		}else {
 			member.setName(name);
@@ -39,13 +39,14 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 			member.setPw(pw);
 			member.setSsn(ssn);
 			member.setRegDate();
+			member.setEmail(email);
 			
 			String spec = service.regist(member);
 			application.log("DB다녀온 이름:"+spec);
 			if(spec.equals("")){
 				%>
 				<h2>로그인 실패!!</h2>
-				<a href="../service/resgist.jsp">다시 시도하기</a>
+				<a href="<%=ctx %>/member/service/resgist.jsp">다시 시도하기</a>
 				<%
 			}else {
 %>
@@ -53,6 +54,7 @@ div.joinDiv{border:1px dotted gray;width:80%; margin:10px 50px 10px 50px;}
 				<span class="meta">	ID </span> <%=request.getParameter("id") %><br/>
 				<span class="meta">	비밀번호 </span> <%=request.getParameter("pw") %><br/>
 				<span class="meta">	SSN  </span><%= request.getParameter("ssn") %><br/>
+				<span class="meta">	EMAIL  </span><%= request.getParameter("email") %><br/>
 				<span class="meta">전공	 </span> <%= request.getParameter("major") %><br/>
 				<span class="meta">수강과목	 </span>
 				<% 

@@ -30,7 +30,7 @@ div.memberClass{font-size: x-large;}
 		</ol>
 		</div>
 
-		<a href="<%=ctx%>/member/memberController.jsp"><br />
+<a href="<%=ctx %>/member/member_controller.jsp">
 		<br /> <img src="<%=ctx%>/img/member.png" alt="member"
 			style="width: 30px" /></a> <a href="<%=ctx%>/index.jsp"> <img
 			src="<%=ctx%>/img/home.png" alt="member" style="width: 30px" />

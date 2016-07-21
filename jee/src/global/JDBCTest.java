@@ -25,7 +25,7 @@ public class JDBCTest { //연결을 확인하는 작업
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql = "select * from test", result = "";// 안에 무슨 테이블이 있냐??
+		String sql = "select * from member", result = "";// 안에 무슨 테이블이 있냐??
 		List<String> list = new ArrayList<String>();
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);

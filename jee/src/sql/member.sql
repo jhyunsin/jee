@@ -31,12 +31,12 @@ select count(*) as count from member;--- count
 --UPDATE
 alter table member add email varchar2(30);
 alter table member add profile_img varchar2(100);
-update member set email='hong@test.com' where id = 'you';
+update member set profile_img='hong1.jpg' where id = 'hong1';
 update member set email= id||'@test.com';
 update member set profile_img= id||'.jpg';
 update member set reg_date = '2015-03-03' where reg_date is null;
 update member set reg_date = '2013-06-29' where id = 'ogong';
 --delete
-delete from member where id = 'qqq';
+delete from member where id = 'bae';
 
 drop table member1;

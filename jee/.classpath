@@ -14,9 +14,9 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/cos.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/jstl.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/servlet-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/standard.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/eclipse/cos.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/eclipse/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/eclipse/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/eclipse/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

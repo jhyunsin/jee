@@ -95,7 +95,39 @@ public class MemberBean {// 클래스 시작
 	}
 
 	public void setGenderAndBirth(String ssn) {
-		this.gender = gender;
+	
+		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
+		String[] ssnArr = ssn.split("-");
+		String[] nowArr = now.split("-");
+		int ssnBirth = (Integer.parseInt(ssnArr[0]));
+		int ssnGender = (Integer.parseInt(ssnArr[1]));
+		int thisYear = (Integer.parseInt(nowArr[0]));
+		int age = 0;
+		switch (ssnGender) {
+		case 1: case 5: 
+			this.gender="남"; 
+			System.out.println("올해:"+thisYear);
+			System.out.println("생년월일:"+ssnBirth);
+		//	age = ageResult2 - (1900-(this/10000));
+		//  나이를 구하려고 했으나 일단 보류
+			this.birth = ssnBirth;
+			break;
+		case 3: case 7:
+			this.gender="남"; 
+			this.birth = ssnBirth;
+			break;
+		case 2: case 6:
+			this.gender="여";
+			this.birth = ssnBirth;
+			break;
+		case 4: case 8:
+			this.gender="여";
+			this.birth = ssnBirth;
+			break;
+		default:
+			System.out.println("잘못된값이 입력됨");
+		}
+		
 	}
 
 	public void setSsn(String ssn) {

@@ -26,7 +26,7 @@ String pw = request.getParameter("pw");
 if(id.equals("")){
 			%>
 			<h2> 아디를 확인하세요</h2>
-			<a href="../service/delete.jsp">다시 시도하기</a>
+			<a href="<%=ctx %>/member/service/delete.jsp">다시 시도하기</a>
 		
 			<%
 		}else {
@@ -37,7 +37,7 @@ if(id.equals("")){
 			if(spec.equals("")){
 				%>
 				<h2>로그인 실패!!</h2>
-				<a href="../service/resgist.jsp">다시 시도하기</a>
+				<a href="<%=ctx %>/member/service/resgist.jsp">다시 시도하기</a>
 				<%
 			}else {
 %>
